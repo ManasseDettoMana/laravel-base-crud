@@ -4,6 +4,6 @@
 <div>
     <h2>{{$comic->title}}</h2>
     <img src="{{$comic->url}}" width="200" alt="">
-    <h3>{{$comic->author}}</h3>
+    <h3><small>author: </small>{{$comic->author}}</h3>
     <p>{{$comic->description}}</p>
 </div>
