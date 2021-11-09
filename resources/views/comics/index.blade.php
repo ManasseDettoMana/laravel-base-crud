@@ -2,7 +2,7 @@
 @extends('layout.main')
 @section('content')
     @foreach($comics as $comic)
-        <div>
+        <div class="index-container">
             <h2>{{$comic->title}}</h2>
             
             <a href="{{route('comics.show', ['id'=>$comic->id])}}">
