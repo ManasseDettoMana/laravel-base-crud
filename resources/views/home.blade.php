@@ -1,1 +1,1 @@
-<h2>Home</h2>
+<h2><a href="{{route('comics.index')}}">Comics</a></h2>
