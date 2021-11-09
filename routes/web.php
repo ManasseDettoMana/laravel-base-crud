@@ -18,4 +18,5 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('/comics', 'ComicController@index')->name('comics.index');
+Route::get('/comics/{id}', 'ComicController@show')->name('comics.show');
 
