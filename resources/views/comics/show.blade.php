@@ -1,5 +1,5 @@
-<p>asda</p>
-<a href="{{route('comics.index')}}">Back to comics</a>
+
+<a href="{{route('comics.index')}}">< Back to comics</a>
 
 <div>
     <h2>{{$comic->title}}</h2>

@@ -8,8 +8,6 @@
     <title>Document</title>
 </head>
 <body>
-    <span>sonon il main</span>
-    
     <main>
         @yield('content')
     </main>
