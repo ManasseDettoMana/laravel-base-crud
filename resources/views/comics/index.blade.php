@@ -1,6 +1,7 @@
 
 @extends('layout.main')
 @section('content')
+    
     @foreach($comics as $comic)
         <div class="index-container">
             <h2>{{$comic->title}}</h2>

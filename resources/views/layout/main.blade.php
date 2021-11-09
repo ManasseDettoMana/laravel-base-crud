@@ -8,6 +8,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{{route('comics.home')}}">Home</a>
     <main>
         @yield('content')
     </main>
