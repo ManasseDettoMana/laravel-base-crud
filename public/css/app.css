@@ -12,6 +12,11 @@ main div {
   width: 33.3333333333%;
 }
 
+.show-container {
+  width: 90%;
+  margin: 0 auto;
+}
+
 body {
   color: rebeccapurple;
 }
