@@ -1,16 +1,7 @@
 //
+@import './partials/index';
+@import './partials/show';
 body{
     color: rebeccapurple;
-    main{
-        width: 60%;
-        margin: 0 auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        div{
-            width: calc(100% / 3);
-        }
-    }
+    
 }
