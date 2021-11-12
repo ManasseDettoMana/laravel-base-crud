@@ -12,9 +12,13 @@ class ComicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $comics = Comic::all();
+        $search = $request->query('search');
+        if($search != null){
+            $comics = Comic::where('title', 'LIKE', "$search%")->get();
+        }
         return view('comics.index', compact('comics'));
     }
 
@@ -26,6 +30,8 @@ class ComicController extends Controller
     public function create()
     {
         //
+        return view('comics.create');
+
     }
 
     /**
@@ -37,6 +43,13 @@ class ComicController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        $comic = new Comic();
+        
+        $comic->fill($data);
+
+        $comic->save();
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -45,10 +58,10 @@ class ComicController extends Controller
      * @param  \App\Comic  $comic
      * @return \Illuminate\Http\Response
      */
-    public function show(Comic $comic)
+    public function show($id)
     {
-        //
-        // $comic = Comic::findOrFail($id);
+        
+        $comic = Comic::findOrFail($id);
         return view('comics.show', compact('comic'));
     }
 
@@ -61,6 +74,8 @@ class ComicController extends Controller
     public function edit(Comic $comic)
     {
         //
+        return view('comics.edit', compact('comic'));
+
     }
 
     /**
@@ -72,7 +87,11 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        
+        $comic->update($data);
+        // dd($comic);
+        return redirect()->route('comics.index');
     }
 
     /**
@@ -84,5 +103,7 @@ class ComicController extends Controller
     public function destroy(Comic $comic)
     {
         //
+        $comic->delete();
+        return redirect()->route('comics.index')->with('delete', $comic->title);
     }
 }
